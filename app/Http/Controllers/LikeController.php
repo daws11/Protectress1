@@ -34,6 +34,22 @@ class LikeController extends Controller
             return back()->with('info', 'Anda sudah menyukai postingan ini.');
         }
     }
+    public function toggle(Post $post)
+{
+    $like = Like::where('user_id', Auth::id())->where('post_id', $post->id)->first();
+
+    if (!$like) {
+        $like = new Like();
+        $like->post_id = $post->id;
+        $like->user_id = Auth::id();
+        $like->save();
+
+        return back()->with('success', 'Anda menyukai postingan ini.');
+    } else {
+        $like->delete();
+        return back()->with('success', 'Like telah dihapus.');
+    }
+}
 
     /**
      * Remove the specified like from storage.
