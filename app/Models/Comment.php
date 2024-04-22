@@ -14,4 +14,11 @@ class Comment extends Model
     {
         return $this->belongsTo(User::class);
     }
+
+    protected $fillable = ['body', 'user_id', 'post_id'];
+
+    public function post()
+    {
+        return $this->belongsTo(Post::class);
+    }
 }

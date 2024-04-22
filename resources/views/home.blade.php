@@ -16,12 +16,15 @@
 
             
         <button class="feature-button" onclick="sendEmergencyMessage()">
-            <div class="button-text">Emergency Notification</div>
-        </button>
+                <div class="button-icon">
+                    <span class="material-icons">warning</span>
+                </div>
+                <div class="button-text">Emergency Notification</div>
+            </button>
         </div>
 
         <div class="feature-buttons-container bottom-buttons">
-            <button class="feature-button" onclick="learnAboutSexualHarassment()">
+            <button class="feature-button">
                 <div class="button-icon">
                     <span class="material-icons">school</span>
                 </div>
@@ -63,20 +66,26 @@
                     <a href="#">Read more</a>
                 </div>
                 </section>
+
                 <section id="educational-content" class="container-box">
                     <h2 style="color: #F4538A;">Educational Content</h2>
                     <div id="sexual-harassment-content">
-                        <h3 id="question-text" style="margin-bottom: 20px;">Quiz: Understanding Sexual Harassment</h3>
-                        <form id="sexual-harassment-form">
-                            <div id="options-container" style="margin-bottom: 20px;">
-                            </div>
-                            <button type="button" id="next-button" style="display: none; background-color: #FAA300; color: white; border: none; border-radius: 5px; padding: 8px 15px; cursor: pointer; margin-right: 10px;">Next</button>
-                            <button type="submit" id="submit-button" style="background-color: #F4538A; color: white; border: none; border-radius: 5px; padding: 8px 15px; cursor: pointer;">Submit</button>
-                        </form>
-                        <div id="sexual-harassment-result" style="margin-top: 20px;"></div>
+                        @foreach ($questions as $index => $question)
+                            <form id="sexual-harassment-form-{{ $index }}">
+                                <h3 id="question-text" style="margin-bottom: 20px;">{{ $question['question'] }}</h3>
+                                <div id="options-container" style="margin-bottom: 20px;">
+                                    @foreach ($question['options'] as $key => $option)
+                                        <div>
+                                            <input type="radio" name="answer" value="{{ $key }}"> {{ $option }}
+                                        </div>
+                                    @endforeach
+                                </div>
+                                <button type="submit" id="submit-button" style="background-color: #F4538A; color: white; border: none; border-radius: 5px; padding: 8px 15px; cursor: pointer;">Submit</button>
+                            </form>
+                            <div id="sexual-harassment-result-{{ $index }}" style="margin-top: 20px;"></div>
+                        @endforeach
                     </div>
                 </section>
     </main>
-
 </body>
 @endsection

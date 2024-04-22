@@ -9,7 +9,7 @@
     </div>
     @foreach ($posts as $post)
         <div class="post mb-4">
-            <h3>{{ $post->content }}</h3>
+            <p>{{ $post->content }}<p>
             <p>{{ $post->created_at->format('d M, Y') }} by {{ $post->user->name }}</p>
             <p>{{ $post->likes_count }} likes</p>
             <p>{{ $post->comments_count }} comments</p>

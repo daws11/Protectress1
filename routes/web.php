@@ -7,6 +7,7 @@ use App\Http\Controllers\CommentController;
 use App\Http\Controllers\LikeController;
 use App\Http\Controllers\PostController;
 use App\Http\Controllers\EmergencyController;
+use App\Http\Controllers\EducationalContentController;
 
 // Rute untuk authentication (login, register, dan logout)
 Route::get('/login', [AuthController::class, 'showLoginForm'])->name('login');
@@ -16,7 +17,8 @@ Route::get('/register', [AuthController::class, 'showRegistrationForm'])->name('
 Route::post('/register', [AuthController::class, 'register']);
 
 // Rute untuk homepage
-Route::get('/', [HomeController::class, 'showHome'])->name('home');
+Route::get('/', [HomeController::class, 'index'])->name('home');
+// Route::get('/', [HomeController::class, 'showHome'])->name('home');
 Route::get('/about', [HomeController::class, 'showAbout'])->name('about');
 
 Route::resource('/forum', ForumController::class);
@@ -46,5 +48,7 @@ Route::post('/forum', [ForumController::class, 'store'])->name('forum.store')->m
 
 // Emergency
 Route::get('/send-emergency', [EmergencyController::class, 'sendWhatsApp']);
+
+Route::get('/home', [EducationalContentController::class, 'index']);
 
 

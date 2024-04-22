@@ -4,7 +4,7 @@
 
 @section('content')
 <div class="container mt-4">
-    <h1>{{ $post->content }}</h1>
+    <p>{{ $post->content }}<p>
     <small>Diposting oleh {{ $post->user->name }} pada {{ $post->created_at->format('d M Y') }}</small>
 
     <form action="{{ route('posts.likes.toggle', $post->id) }}" method="POST">

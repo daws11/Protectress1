@@ -22,25 +22,17 @@ class HomeController extends Controller
         return view('forum');
     }
     
-    public function submitCrimeReport(Request $request)
+    public function index()
     {
-        // Validasi data pelaporan
-        $request->validate([
-            'crime_description' => 'required|string',
-            'crime_evidence' => 'nullable|file',
-        ]);
+        $questions = [
+            [
+                'question' => 'What is considered as sexual harassment in the workplace?',
+                'options' => ['Unwanted physical contact', 'Asking for a date repeatedly', 'Both A and B', 'None of the above'],
+                'correct_answer' => 'Both A and B'
+            ],
+            // Additional questions can be added here
+        ];
 
-        // Simpan laporan kejahatan seksual ke dalam database
-        $crimeReport = new CrimeReport;
-        $crimeReport->crime_description = $request->crime_description;
-
-        if ($request->hasFile('crime_evidence')) {
-            $path = $request->file('crime_evidence')->store('crime_evidence');
-            $crimeReport->crime_evidence = $path;
-        }
-
-        $crimeReport->save();
-
-        return redirect()->route('home')->with('success', 'Laporan kejahatan seksual berhasil disimpan.');
+        return view('home', compact('questions')); // Passing the questions array to the view
     }
 }
