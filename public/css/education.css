@@ -1,0 +1,308 @@
+body {
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    color: #333; 
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+header {
+    background-color: #f7f5e9;
+    padding: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo h1 {
+    margin: 0;
+    color: #F4538A; /* Warna teks logo */
+}
+
+nav ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    align-items: center;
+}
+
+nav ul li {
+    margin-right: 20px;
+}
+
+nav ul li a {
+    color: #333; 
+    text-decoration: none;
+}
+
+.user-actions button {
+    background-color: #FAA300;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    padding: 8px 15px;
+    cursor: pointer;
+    margin-left: 10px;
+}
+
+.user-actions button:hover {
+    background-color: #F4538A;
+}
+
+#profile-btn {
+    background-color: #FAA300;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-left: 10px;
+    padding: 8px 15px;
+}
+
+#profile-btn:hover {
+    background: #F4538A;
+}
+
+#profile-btn:active {
+    background: #F4538A;
+}
+
+#profile-btn .material-icons {
+    color: white;
+}
+
+main {
+    text-align: center;
+    padding: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start; /* Align items to the start */
+    flex-wrap: wrap; /* Allow items to wrap */
+}
+
+#map-container {
+    width: 100%; 
+    max-width: 800px; 
+    height: 400px;
+    margin-bottom: 20px;
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    position: relative;
+}
+.feature-buttons-container {
+    background-color: white;
+    border-radius: 10px;
+    padding: 10px; /* Sesuaikan dengan kebutuhan Anda */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Opsional: Tambahkan bayangan untuk efek kedalaman */
+}
+.map-buttons-container {
+    background-color: rgba(255, 255, 255, 0.8); /* Contoh warna latar belakang */
+    padding: 10px; /* Contoh padding */
+    border-radius: 10px; /* Contoh border radius */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Contoh shadow */
+}
+.map-buttons {
+    display: flex;
+    justify-content: center;
+}    
+    
+.map-buttons button {
+    width: auto; /* Menghapus properti width */
+    padding: 15px; /* Mengubah padding agar tombol tetap proporsional */
+    font-size: 16px;
+    background-color: #FAA300;
+    color: white;
+    border: none;
+    border-radius: 50%; /* Menjadikan border-radius 50% untuk membuatnya bulat */
+    cursor: pointer;
+    margin: 0 10px; /* Menghapus properti margin */
+}
+
+.map-buttons button:hover {
+    background-color: #F4538A;
+}
+
+.forum-news-container {
+    display: flex;
+    gap: 20px; /* Gap between the two containers */
+    flex-grow: 1; /* Let the containers grow to fill the space */
+}
+
+.forum-container,
+.container-box {
+    flex: 1; /* Menggunakan flex untuk menyesuaikan ukuran container */
+    padding: 20px;
+    background-color: #f9f9f9;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.thread {
+    margin-bottom: 20px;
+    border: 1px solid #ccc;
+    padding: 10px;
+    text-align: left;
+}
+
+.thread h3 {
+    margin: 0;
+    color: #333;
+    display: flex; 
+    align-items: center; 
+}
+
+.thread h3 .user-icon {
+    font-size: 24px;
+    margin-right: 10px;
+}
+
+.thread p {
+    margin-top: 5px;
+    color: #666;
+}
+
+.thread a {
+    color: #F4538A; 
+    text-decoration: none;
+}
+
+.thread a:hover {
+    text-decoration: underline;
+}
+
+footer {
+    background-color: #F5DD61;
+    padding: 20px;
+    text-align: center;
+    width: 100%;
+}
+
+/* Merapikan font di dalam container berita terkini */
+.container-box h2 {
+    margin-top: 0;
+}
+
+.container-box p {
+    margin-top: 10px;
+    font-size: 16px;
+    line-height: 1.5;
+}
+
+.container-box a {
+    color: #F4538A;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.container-box a:hover {
+    text-decoration: underline;
+}
+
+/* Tambahkan properti overflow-y: auto; pada .container-box#news-section */
+.container-box#news-section {
+    overflow-y: auto;
+    max-height: 400px; /* Ukuran maksimum untuk memicu scroll */
+    padding: 20px; /* Tambahkan padding di sekitar konten */
+}
+
+/* Tambahkan padding-right untuk mengkompensasi scrollbar */
+.container-box#news-section::-webkit-scrollbar {
+    width: 10px;
+}
+
+.container-box#news-section::-webkit-scrollbar-thumb {
+    background-color: #888;
+}
+
+/* Tambahkan gaya untuk container berita */
+.news-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 20px;
+}
+
+.news-item {
+    background-color: #f0f0f0;
+    padding: 20px;
+    border-radius: 5px;
+}
+
+.news-item img {
+    max-width: 100%;
+    height: auto;
+}
+
+.feature-buttons-container {
+    display: flex;
+    lex-wrap: wrap;
+    justify-content: center;
+    margin-bottom: 20px;
+}
+
+.top-buttons {
+    margin-bottom: 10px; /* Jarak antara bagian atas dan bawah */
+}
+
+.bottom-buttons {
+    margin-top: 10px; /* Jarak antara bagian atas dan bawah */
+}
+
+.feature-button {
+    width: 6cm;
+    height: 6cm;
+    background-color: #F7F5E9;
+    color: #333;
+    border: 3px solid #F4538A;
+    border-radius: 15px;
+    margin: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.feature-button:hover {
+    background-color: #F4538A;
+    color: white;
+}
+
+.button-icon {
+    font-size: 2.5cm;
+}
+
+.button-text {
+    font-size: 20px;
+    margin-top: 10px;
+    text-align: center;
+}
+</style>
+</head>
+<body>
+<header>
+<div class="logo">
+    <span class="material-icons">eco</span>
+    <h1>Protectrees</h1>
+</div>
+<nav>
+    <ul>
+        <li><a href="{{ route('home') }}">Home</a></li>
+        <li><a href="{{ route('about') }}">About Us</a></li>
+    </ul>
+</nav>
+<div class="user-actions">
+    <button type="button" class="icon-button" id="notification-button">
+        <span class="material-icons">notifications</span>
+        <span class="icon-button__badge"></span>
+    </button>
+    <a href="{{ route('profile') }}" class="profile-button">
+        <button id="profile-btn">
+            <span class="material-icons">account_circle</span>
+        </button>
+    </a>
+</div>
