@@ -15,12 +15,9 @@
         </button>
 
             
-            <button class="feature-button" onclick="sendEmergencyNotification()">
-                <div class="button-icon">
-                    <span class="material-icons">warning</span>
-                </div>
-                <div class="button-text">Emergency Notification</div>
-            </button>
+        <button class="feature-button" onclick="sendEmergencyMessage()">
+            <div class="button-text">Emergency Notification</div>
+        </button>
         </div>
 
         <div class="feature-buttons-container bottom-buttons">

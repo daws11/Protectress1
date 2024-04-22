@@ -6,6 +6,7 @@ use App\Http\Controllers\ForumController;
 use App\Http\Controllers\CommentController;
 use App\Http\Controllers\LikeController;
 use App\Http\Controllers\PostController;
+use App\Http\Controllers\EmergencyController;
 
 // Rute untuk authentication (login, register, dan logout)
 Route::get('/login', [AuthController::class, 'showLoginForm'])->name('login');
@@ -42,5 +43,8 @@ Route::get('/forum', [ForumController::class, 'index'])->name('forum.index');
 Route::get('/forum', [ForumController::class, 'index'])->name('forum.index');
 Route::get('/forum/create', [ForumController::class, 'create'])->name('forum.create')->middleware('auth');
 Route::post('/forum', [ForumController::class, 'store'])->name('forum.store')->middleware('auth');
+
+// Emergency
+Route::get('/send-emergency', [EmergencyController::class, 'sendWhatsApp']);
 
 
