@@ -8,8 +8,8 @@
     <link rel="stylesheet" href="{{ asset('css/home.css') }}">
     <link rel="stylesheet" href="{{ asset('css/about.css') }}">
     <link rel="stylesheet" href="{{ asset('css/profile.css') }}">
-    <!-- <link rel="stylesheet" href="{{ asset('css/login.css') }}"> -->
-    <!-- <link rel="stylesheet" href="{{ asset('css/register.css') }}"> -->
+    <link rel="stylesheet" href="{{ asset('css/login.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/register.css') }}">
     <link rel="stylesheet" href="{{ asset('css/forum.css') }}">
 
     
