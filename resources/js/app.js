@@ -14,5 +14,11 @@ setTimeout(function() {
         document.getElementById("success-message").style.display = "block";
 }, 3000);
 
+function scrollToQuiz() {
+    const quizSection = document.getElementById('educational-content');
+    if (quizSection) {
+        quizSection.scrollIntoView({ behavior: 'smooth' });
+    }
+}
 
 

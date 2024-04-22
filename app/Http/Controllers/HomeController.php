@@ -9,7 +9,19 @@ class HomeController extends Controller
 {
     public function showHome()
     {
-        return view('home');
+        $questions = [
+            [
+                'question' => 'What is considered as sexual harassment in the workplace?',
+                'options' => ['Unwanted physical contact', 'Asking for a date repeatedly', 'Both A and B', 'None of the above'],
+                'correct_answer' => 'Both A and B'
+            ],
+            // Additional questions can be added here
+        ];
+    
+        // Extracting correct answers
+        $correctAnswers = array_column($questions, 'correct_answer');
+    
+        return view('home', compact('questions', 'correctAnswers'));
     }
 
     public function showAbout()
@@ -22,17 +34,4 @@ class HomeController extends Controller
         return view('forum');
     }
     
-    public function index()
-    {
-        $questions = [
-            [
-                'question' => 'What is considered as sexual harassment in the workplace?',
-                'options' => ['Unwanted physical contact', 'Asking for a date repeatedly', 'Both A and B', 'None of the above'],
-                'correct_answer' => 'Both A and B'
-            ],
-            // Additional questions can be added here
-        ];
-
-        return view('home', compact('questions')); // Passing the questions array to the view
-    }
 }

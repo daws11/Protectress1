@@ -59,18 +59,6 @@ function sendToServer(latitude, longitude) {
     const url = `/send-emergency?lat=${latitude}&lng=${longitude}`;
     window.location.href = url; // For demonstration; you might want to use AJAX instead.
 }
-
-document.addEventListener("DOMContentLoaded", function() {
-    document.querySelectorAll('form').forEach(form => {
-        form.addEventListener('submit', function(event) {
-            event.preventDefault();
-            const selectedValue = this.querySelector('input[name="answer"]:checked').value;
-            const resultDiv = document.getElementById(`sexual-harassment-result-${this.id.split('-').pop()}`);
-            // Just a placeholder for actual logic
-            resultDiv.textContent = selectedValue === '{{ $question['correct_answer'] }}' ? 'Correct Answer!' : 'Wrong Answer!';
-        });
-    });
-});
 </script>
 
 <script src="{{ asset('js/app.js') }}"></script>

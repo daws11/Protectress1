@@ -24,7 +24,7 @@
         </div>
 
         <div class="feature-buttons-container bottom-buttons">
-            <button class="feature-button">
+            <button class="feature-button " onclick="scrollToQuiz()">
                 <div class="button-icon">
                     <span class="material-icons">school</span>
                 </div>
@@ -87,5 +87,20 @@
                     </div>
                 </section>
     </main>
-</body>
+</body
+<script>
+    document.addEventListener("DOMContentLoaded", function() {
+        document.querySelectorAll('form').forEach((form, index) => {
+            form.addEventListener('submit', function(event) {
+                event.preventDefault();
+                const selectedValue = this.querySelector('input[name="answer"]:checked').value;
+                const resultDiv = document.getElementById(`sexual-harassment-result-${index}`);
+                const correctAnswers = @json($correctAnswers);
+                resultDiv.textContent = selectedValue === correctAnswers[index] ? 'Correct Answer!' : 'Wrong Answer!';
+            });
+        });
+    });
+</script>
+
+
 @endsection

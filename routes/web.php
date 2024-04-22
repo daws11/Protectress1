@@ -17,8 +17,8 @@ Route::get('/register', [AuthController::class, 'showRegistrationForm'])->name('
 Route::post('/register', [AuthController::class, 'register']);
 
 // Rute untuk homepage
-Route::get('/', [HomeController::class, 'index'])->name('home');
-// Route::get('/', [HomeController::class, 'showHome'])->name('home');
+// Route::get('/', [HomeController::class, 'index'])->name('home');
+Route::get('/', [HomeController::class, 'showHome'])->name('home');
 Route::get('/about', [HomeController::class, 'showAbout'])->name('about');
 
 Route::resource('/forum', ForumController::class);
