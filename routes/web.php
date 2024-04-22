@@ -8,6 +8,7 @@ use App\Http\Controllers\LikeController;
 use App\Http\Controllers\PostController;
 use App\Http\Controllers\EmergencyController;
 use App\Http\Controllers\EducationalContentController;
+use App\Http\Controllers\CrimeReportController;
 
 // Rute untuk authentication (login, register, dan logout)
 Route::get('/login', [AuthController::class, 'showLoginForm'])->name('login');
@@ -50,5 +51,10 @@ Route::post('/forum', [ForumController::class, 'store'])->name('forum.store')->m
 Route::get('/send-emergency', [EmergencyController::class, 'sendWhatsApp']);
 
 Route::get('/home', [EducationalContentController::class, 'index']);
+
+//report
+Route::get('/report-crime', [CrimeReportController::class, 'create'])->name('report-crime.create');
+Route::post('/report-crime', [CrimeReportController::class, 'store'])->name('report-crime.store');
+
 
 

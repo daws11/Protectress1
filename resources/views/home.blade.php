@@ -3,7 +3,7 @@
 @section('title', 'Homepage')
 
 @section('content')
-<body>
+
     <main>
     <section id="button-container">
         <div class="feature-buttons-container top-buttons">
@@ -20,23 +20,19 @@
                     <span class="material-icons">warning</span>
                 </div>
                 <div class="button-text">Emergency Notification</div>
-            </button>
-        </div>
-
-        <div class="feature-buttons-container bottom-buttons">
-            <button class="feature-button " onclick="scrollToQuiz()">
+        </button>
+        <button class="feature-button " onclick="scrollToQuiz()">
                 <div class="button-icon">
                     <span class="material-icons">school</span>
                 </div>
                 <div class="button-text">Education</div>
-            </button>
-
-            <button class="feature-button" onclick="viewAnnouncements()">
+        </button>
+        <button class="feature-button" onclick="window.location.href='{{ route('report-crime.create') }}'">
                 <div class="button-icon">
                     <span class="material-icons">campaign</span>
                 </div>
                 <div class="button-text">Report</div>
-            </button>
+        </button>
         </div>
     </section>
         </section>
@@ -86,21 +82,22 @@
                         @endforeach
                     </div>
                 </section>
+                <script>
+                    document.addEventListener("DOMContentLoaded", function() {
+                        document.querySelectorAll('form').forEach((form, index) => {
+                            form.addEventListener('submit', function(event) {
+                                event.preventDefault();
+                                const selectedValue = this.querySelector('input[name="answer"]:checked').value;
+                                const resultDiv = document.getElementById(`sexual-harassment-result-${index}`);
+                                const correctAnswers = @json($correctAnswers);
+                                resultDiv.textContent = selectedValue === correctAnswers[index] ? 'Correct Answer!' : 'Wrong Answer!';
+                            });
+                        });
+                    });
+                </script>
+
     </main>
-</body
-<script>
-    document.addEventListener("DOMContentLoaded", function() {
-        document.querySelectorAll('form').forEach((form, index) => {
-            form.addEventListener('submit', function(event) {
-                event.preventDefault();
-                const selectedValue = this.querySelector('input[name="answer"]:checked').value;
-                const resultDiv = document.getElementById(`sexual-harassment-result-${index}`);
-                const correctAnswers = @json($correctAnswers);
-                resultDiv.textContent = selectedValue === correctAnswers[index] ? 'Correct Answer!' : 'Wrong Answer!';
-            });
-        });
-    });
-</script>
+
 
 
 @endsection

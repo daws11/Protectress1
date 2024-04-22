@@ -9,7 +9,10 @@
 
     <form action="{{ route('posts.likes.toggle', $post->id) }}" method="POST">
         @csrf
-        <button type="submit" class="btn btn-success">{{ $post->likes->contains('user_id', auth()->id()) ? 'Batal Suka' : 'Suka' }}</button>
+        <button type="submit" class="btn btn-like {{ $post->likes->contains('user_id', auth()->id()) ? 'liked' : '' }}">
+            <span class="icon-heart">{{ $post->likes->contains('user_id', auth()->id()) ? '❤' : '♡' }}</span> Like
+        </button>
+
     </form>
 
     @if(auth()->id() == $post->user_id)

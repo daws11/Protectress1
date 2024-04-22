@@ -15,6 +15,7 @@ header {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    margin-bottom: 300px;
 }
 
 .logo h1 {
@@ -77,11 +78,12 @@ nav ul li a {
 
 main {
     text-align: center;
-    padding: 20px;
+    padding-: 20px;
+    padding-top: 30px;
     display: flex;
     justify-content: center;
-    align-items: flex-start; /* Align items to the start */
-    flex-wrap: wrap; /* Allow items to wrap */
+    align-items: flex-start; 
+    flex-wrap: wrap; 
 }
 
 #map-container {
@@ -95,10 +97,21 @@ main {
     position: relative;
 }
 .feature-buttons-container {
-    background-color: white;
-    border-radius: 10px;
-    padding: 10px; /* Sesuaikan dengan kebutuhan Anda */
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Opsional: Tambahkan bayangan untuk efek kedalaman */
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(120px, 1fr)); /* Adjust minmax values as needed */
+    gap: 10px; /* Adjust gap as needed */
+    padding: 20px;
+    justify-content: center;
+}
+.feature-button {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 10px;
+    border-radius: 10px; /* Rounded corners */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 .map-buttons-container {
     background-color: rgba(255, 255, 255, 0.8); /* Contoh warna latar belakang */
@@ -182,60 +195,6 @@ footer {
     width: 100%;
 }
 
-/* Merapikan font di dalam container berita terkini */
-.container-box h2 {
-    margin-top: 0;
-}
-
-.container-box p {
-    margin-top: 10px;
-    font-size: 16px;
-    line-height: 1.5;
-}
-
-.container-box a {
-    color: #F4538A;
-    text-decoration: none;
-    font-weight: bold;
-}
-
-.container-box a:hover {
-    text-decoration: underline;
-}
-
-/* Tambahkan properti overflow-y: auto; pada .container-box#news-section */
-.container-box#news-section {
-    overflow-y: auto;
-    max-height: 400px; /* Ukuran maksimum untuk memicu scroll */
-    padding: 20px; /* Tambahkan padding di sekitar konten */
-}
-
-/* Tambahkan padding-right untuk mengkompensasi scrollbar */
-.container-box#news-section::-webkit-scrollbar {
-    width: 10px;
-}
-
-.container-box#news-section::-webkit-scrollbar-thumb {
-    background-color: #888;
-}
-
-/* Tambahkan gaya untuk container berita */
-.news-container {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 20px;
-}
-
-.news-item {
-    background-color: #f0f0f0;
-    padding: 20px;
-    border-radius: 5px;
-}
-
-.news-item img {
-    max-width: 100%;
-    height: auto;
-}
 
 .feature-buttons-container {
     display: flex;
@@ -281,79 +240,4 @@ footer {
     font-size: 20px;
     margin-top: 10px;
     text-align: center;
-}
-.popup{
-    width: 100%;
-    height: 100vh;
-    background-color: rgba(0,0,0, .8);
-    position: fixed;
-    top: 0;
-    left: 0;
-
-    opacity: 0;
-    visibility: hidden;
-}
-.popup--content{
-    width: 80%;
-    background-color: #fff;
-    box-shadow: 0 20px 40px rgba(0,0,0, .2);
-
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    padding: 20px;
-    border-radius: 5px;
-    transform: translate(-50%, -50%);
-    opacity: 0;
-    transition: opacity 0.3s ease-in-out;
-}
-.popup--img{
-    display: flex;
-    width: 100%;
-    margin-bottom: 40px;
-    justify-content: center;
-    align-items: center;
-}
-.popup--img img{
-    display: block;
-    width: 33.3333%;
-}
-.popup--header{
-    text-align: center;
-    text-transform: uppercase;
-    color: #555;
-    margin-bottom: 36px;
-}
-.popup--header h1{
-    font-size: 20px;
-}
-.popup--header h2{
-    font-size: 20px;
-}
-.popup--text{
-    padding: 0 36px;
-    line-height: 1.4;
-}
-.popup--text p:not(:last-child){
-    margin-bottom: 16px:
-}
-.popup--btn{
-    display: inline-block;
-    padding: 10px 20px;
-    background-color: #555;
-    color: #fff;
-    border: none;
-    border-radius: 30px;
-    box-shadow: 0px 3px 5px rgba(0, 0, 0, 0.3);
-    font-size: 16px;
-    text-align: center;
-    text-decoration: none;
-    cursor: pointer;
-}
-#popup:target{
-    opacity: 1;
-    visibility: visible;
-}
-#popup:target .popup--content{
-    opacity: 1;
 }
