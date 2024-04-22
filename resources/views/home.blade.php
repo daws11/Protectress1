@@ -45,21 +45,21 @@
                         <span class="material-icons user-icon">account_circle</span> Upi <!-- Ganti "Upi" dengan nama pengguna -->
                     </h3>
                     <p>Halo teman-teman, saya ingin memberikan peringatan penting terkait keselamatan di sekitar area jalan Anggrek. Beberapa waktu belakangan ini, saya mendengar banyak laporan tentang peningkatan kasus pelecehan seksual, terutama di sekitar area jalan Anggrek pada malam hari. Mari kita semua bersama-sama lebih waspada dan saling menjaga satu sama lain. Jika ada yang memiliki pengalaman atau tips untuk menghindari situasi tersebut, silakan bagi di sini. Semoga kita semua tetap aman dan terlindungi.</p>
-                    <a href="#">Read more</a>
+                    <a onclick="goToCommunityForum()">Read more</a>
                 </div>
                 <div class="thread">
                     <h3>
                         <span class="material-icons user-icon">account_circle</span> Itak <!-- Ganti "Itak" dengan nama pengguna -->
                     </h3>
                     <p>Halo teman-teman, saya setuju dengan peringatan yang disampaikan oleh Upi. Situasi ini memang memprihatinkan, dan kita semua harus saling mendukung untuk menjaga keamanan di lingkungan kita. Saya ingin menambahkan bahwa penting untuk tidak ragu-ragu melaporkan kejadian yang mencurigakan atau kasus pelecehan seksual yang kita saksikan. Mari jadikan lingkungan kita menjadi tempat yang lebih aman bagi semua orang.</p>
-                    <a href="#">Read more</a>
+                    <a onclick="goToCommunityForum()">Read more</a>
                 </div>
                 <div class="thread">
                     <h3>
                         <span class="material-icons user-icon">account_circle</span> Fakhran <!-- Ganti "Fakhran" dengan nama pengguna -->
                     </h3>
                     <p>Halo teman-teman, saya ingin berbagi beberapa tips untuk menghindari situasi pelecehan seksual di area jalan. Pertama, selalu berjalan di jalur yang ramai dan terang jika memungkinkan. Kedua, perhatikan lingkungan sekitar dan waspada terhadap perilaku yang mencurigakan. Ketiga, jika merasa tidak aman, segera cari tempat yang lebih aman atau minta bantuan dari orang lain atau pihak berwenang. Semoga tips ini dapat membantu kita semua menjaga keselamatan di area jalan.</p>
-                    <a href="#">Read more</a>
+                    <a onclick="goToCommunityForum()">Read more</a>
                 </div>
                 </section>
 

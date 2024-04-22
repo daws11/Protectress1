@@ -29,23 +29,27 @@ Route::resource('/forum', ForumController::class);
 Route::get('/profile', [ProfileController::class, 'showProfile'])->name('profile');
 Route::post('/profile/update', [ProfileController::class, 'updateProfile'])->name('update_profile')->middleware('auth');
 
-//forum
-Route::resource('posts', PostController::class);
-Route::resource('comments', CommentController::class);
-Route::post('posts/{post}/comments', [CommentController::class, 'store'])->name('comments.store');
-Route::post('posts/{post}/likes', [LikeController::class, 'store'])->name('likes.store');
-Route::delete('posts/{post}/likes', [LikeController::class, 'destroy'])->name('likes.destroy');
-
-Route::get('posts/{post}', [ForumController::class, 'show'])->name('posts.show');
-Route::post('posts/{post}/comments', [ForumController::class, 'storeComment'])->name('posts.comments.store');
-Route::post('posts/{post}/likes', [ForumController::class, 'toggleLike'])->name('posts.likes.toggle');
+// Routes untuk PostController
+Route::resource('posts', PostController::class)->except(['show', 'create', 'store', 'destroy']);
 Route::get('posts/create', [ForumController::class, 'create'])->name('posts.create');
+Route::post('posts', [ForumController::class, 'store'])->name('posts.store');
+Route::get('posts/{post}', [ForumController::class, 'show'])->name('posts.show');
 Route::delete('posts/{post}', [PostController::class, 'destroy'])->name('posts.destroy');
 
-Route::get('/forum', [ForumController::class, 'index'])->name('forum.index');
+// Routes untuk CommentController
+Route::resource('comments', CommentController::class)->only(['store', 'destroy']);
+Route::post('posts/{post}/comments', [CommentController::class, 'store'])->name('posts.comments.store');
+
+// Routes untuk LikeController
+Route::post('posts/{post}/likes', [LikeController::class, 'store'])->name('posts.likes.store');
+Route::delete('posts/{post}/likes', [LikeController::class, 'destroy'])->name('posts.likes.destroy');
+Route::post('posts/{post}/toggle-like', [LikeController::class, 'toggle'])->name('posts.likes.toggle');
+
+
+// General Forum Routes
 Route::get('/forum', [ForumController::class, 'index'])->name('forum.index');
 Route::get('/forum/create', [ForumController::class, 'create'])->name('forum.create')->middleware('auth');
-Route::post('/forum', [ForumController::class, 'store'])->name('forum.store')->middleware('auth');
+
 
 // Emergency
 Route::get('/send-emergency', [EmergencyController::class, 'sendWhatsApp']);
